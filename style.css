@@ -13,13 +13,26 @@ body {
     color: darkslategray;
 }
 
-.s {
-    margin: 10px;
-    font-size: 18px;
+.div_speed {
+    float: left;
+}
+
+.div_volume {
+    float: right;
+}
+
+.div_img {
+    width: 200px;
+    border-radius: 100px;
+}
+
+#speed , #volume, .s {
+    font-size: 23px;
+    margin: 15px;
 }
 
 canvas {
-    border: 3px ridge #e14166;
+    border: 3px ridge royalblue;
     border-radius: 20;
     margin-top: 50px;
 }
