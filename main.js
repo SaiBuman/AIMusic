@@ -41,8 +41,29 @@ function gotPosses(results) {
 
        console.log("Left wrist x is "+ left_Wrist_x + " and Right wrist x is "+right_Wrist_x);
        console.log("Left wrist y is "+ left_Wrist_y + " and Right wrist y is "+right_Wrist_y);
-    }
-}
- function draw() {
-     image(video,0,0,600,600);
- }
+       leftWristScore = results[0].pose.keypoints[9].score ; 
+       rightWristScore = results[0].pose.keypoints[10].score ; 
+       console.log(leftWristScore);
+       console.log(rightWristScore);
+
+         }
+
+        }
+        function draw() {
+            image(video,0,0,600,500);
+            fill("#384a59");
+            stroke("#fa8682");
+       
+            if (leftWristScore>0.2) {
+                circle(left_Wrist_x,left_Wrist_y,20);
+                song1.play();
+                song2.stop();
+
+            }    
+            if (rightWristScore>0.2) {
+                    circle(right_Wrist_x,right_Wrist_y,20);
+                    song2.play();
+                    song1.stop();
+            }
+
+        }     
